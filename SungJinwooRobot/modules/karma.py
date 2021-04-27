@@ -96,10 +96,10 @@ async def karma(_, message):
             if limit > 9:
                 break
             try:
-                user_name = (await pgram.get_users(int(user_idd))).username
+                user_name = (await pgram.get_users(int(user_idd))).mention
             except Exception:
                 continue
-            msg += f"{user_mention} : `{karma_count}`\n"
+            msg += f"{user_name} : `{karma_count}`\n"
             limit += 1
         await message.reply_text(msg)
     else:

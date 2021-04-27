@@ -7,7 +7,7 @@ from pyrogram import filters
 
 
 regex_upvote = r"^((?i)\+\+\+|\+\+|\+1|thank you|ty|tysm|👍)$"
-regex_downvote = r"^((?i)\-\-|\-\-\-\|\-1)$"
+regex_downvote = r"^((?i)\-\-|\-\-\-|\-1|bad)$"
 
 
 @pgram.on_message(

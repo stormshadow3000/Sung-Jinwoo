@@ -72,7 +72,7 @@ async def downvote(_, message):
         new_karma = {"karma": karma}
         await update_karma(chat_id, await int_to_alpha(user_id), new_karma)
     await message.reply_text(
-        f'Decreased reputation Of {user_mention} By 1 \nTotal Points: {karma}'
+        f'Decreased Reputation Of {user_mention} By 1 \nTotal Points: {karma}'
     )
 
 

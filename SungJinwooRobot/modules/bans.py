@@ -617,13 +617,12 @@ __help__ = """
  • `/tban <userhandle> x(m/h/d)`*:* bans a user for `x` time. (via handle, or reply). `m` = `minutes`, `h` = `hours`, `d` = `days`.
  • `/dban` <userhandle>: Bans a user and also deletes the message sent by banned user.
  • `/unban <userhandle>`*:* unbans a user. (via handle, or reply)
- • `/kick <userhandle>`*:* Kicks a user out of the group, (via handle, or reply)
- • `/punch <userhandle>`*:* Punches a user out of the group, (via handle, or reply)
+ • `/bonk | /kick | /punch  <userhandle>`*:* Removes a user out of the group, they can join again. (via handle, or reply)
 """
 
 BAN_HANDLER = CommandHandler(["ban", "sban"], ban)
 TEMPBAN_HANDLER = CommandHandler(["tban"], temp_ban)
-PUNCH_HANDLER = CommandHandler(["punch", "kick"], punch)
+PUNCH_HANDLER = CommandHandler(["punch", "kick", "bonk"], punch)
 BANME_HANDLER = DisableAbleCommandHandler(
     "banme", banme, filters=Filters.group)
 UNBAN_HANDLER = CommandHandler("unban", unban)

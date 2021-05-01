@@ -4,6 +4,7 @@ import sys
 import time
 import spamwatch
 from redis import StrictRedis
+from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 from pyrogram import Client, errors
 
 import telegram.ext as tg

@@ -198,6 +198,10 @@ except BaseException:
     raise Exception("Your redis server is not alive, please check again.")
 
 
+updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
+telethn = TelegramClient("SungJinwooRobot", API_ID, API_HASH)
+dispatcher = updater.dispatcher
+
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)

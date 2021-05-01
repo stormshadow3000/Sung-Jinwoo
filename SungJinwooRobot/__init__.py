@@ -3,6 +3,8 @@ import os
 import sys
 import time
 import spamwatch
+
+
 from redis import StrictRedis
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 from pyrogram import Client, errors
@@ -29,6 +31,7 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
     quit(1)
 
 
+    
     
 ENV = bool(os.environ.get("ENV", False))
 
@@ -200,12 +203,11 @@ except BaseException:
 
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
-telethn = TelegramClient("SungJinwooRobot", API_ID, API_HASH)
-dispatcher = updater.dispatcher
+telethn = TelegramClient("SungJinwoo", API_ID, API_HASH)
 pgram = Client("SungJinwooRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 mongo_client = MongoClient(MONGO_DB_URI)
 db = mongo_client.SungJinwooRobot
-
+dispatcher = updater.dispatcher
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)

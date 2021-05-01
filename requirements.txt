@@ -23,10 +23,7 @@ bson
 motor
 dnspython # needed to connect to cloud MongoDB instances
 pymongo
-sentry_sdk
 python-rapidjson
-aiogram
-aioredis # Redis memery storage fom aiogram
 envparse
 PyYAML>5.0
 aiohttp>=2.2.5
@@ -41,7 +38,7 @@ regex
 bleach
 git+https://github.com/starry69/python-markdown2.git
 wikipedia
-telethon
+telethon==1.16.4
 spamwatch
 alphabet_detector
 pyrate-limiter

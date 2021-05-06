@@ -5,7 +5,7 @@ from SungJinwooRobot.utils.filter_groups import karma_positive_group, karma_nega
 from pyrogram import filters
 
 
-regex_upvote = r"^((?i)\+\+\+\+|\+\+\+\+\+|\+1|awesome \+\+\+|nice \+\+\+)$"
+regex_upvote = r"^((?i)\+\+\+|\+\+\+\+|\+\+\+\+\+|\+1|awesome \+\+\+|nice \+\+\+|cool \+\+\+|cool \+\+|cool \+|nice \+\+|nice \+|lmao 😂)$"
 regex_downvote = r"^((?i)\-\-\-|not nice \-\-\-|)$"
 
 
@@ -112,7 +112,7 @@ async def karma(_, message):
             await message.reply_text(f'**Total Points**: __{karma}__')
 
 __mod_name__ = "Reputation"
-__help__ = """*Upvote* - Use upvote keywords like "+++++", "awesome +++", etc. to upvote a message.
+__help__ = """*Upvote* - Use upvote keywords like "+++","++++","+++++","cool +++","nice +++","awesome +++" to upvote a message.
 
 *Downvote* - Use downvote keywords like "not nice ---", "---", etc. to downvote a message.
 

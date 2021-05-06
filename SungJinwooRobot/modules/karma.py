@@ -109,7 +109,7 @@ async def karma(_, message):
             await message.reply_text(f'**Reputation Of {user_mention}**: __{karma}__')
         else:
             karma = 0
-            await message.reply_text(f'**Reputation Of {user_mention}**: __{karma}__')
+            await message.reply_text(f'Reputation Of {user_mention}: __{karma}__')
 
 __mod_name__ = "Reputation"
 __help__ = """*Upvote* - Use upvote keywords like "+++", "++++", "+++++", "cool +++", "nice +++", "awesome +++", "lmao 😂" to upvote a message.

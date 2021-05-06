@@ -79,4 +79,4 @@ def resize_image(image):
     im.save(image, "PNG")
 
 
-__mod_name__ = "T GRAPH"
+__mod_name__ = "Telegraph"

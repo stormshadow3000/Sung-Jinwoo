@@ -21,7 +21,7 @@ async def _(event):
         start = datetime.now()
         r_message = await event.get_reply_message()
         input_str = event.pattern_match.group(1)
-        if input_str == "m":
+        if input_str == "md":
             downloaded_file_name = await tbot.download_media(
                 r_message,
                 TMP_DOWNLOAD_DIRECTORY

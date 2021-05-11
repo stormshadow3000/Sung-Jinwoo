@@ -6,7 +6,7 @@ from pyrogram import filters
 
 
 regex_upvote = r"^((?i)\+\+\+|\+\+\+\+|\+\+\+\+\+|\+1|awesome \+\+\+|nice \+\+\+|cool \+\+\+|cool \+\+|cool \+|nice \+\+|nice \+|lmao 😂)$"
-regex_downvote = r"^((?i)\-\-\-|not nice \-\-\-|)$"
+regex_downvote = r"^((?i)\-\-\-\-\-|not nice \-\-\-\-\-|)$"
 
 
 @pgram.on_message(

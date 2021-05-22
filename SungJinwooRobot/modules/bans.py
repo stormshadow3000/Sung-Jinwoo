@@ -292,8 +292,8 @@ def dkick(update, context):
         
         context.bot.sendMessage(
             chat.id,
-            "Admin {} has successfully kicked {} in <b>{}</b>!".format(
-            mention_html(user.id, user.first_name),
+            "Successfully removed {} in <b>{}</b>!".format(
+            
             mention_html(member.user.id, member.user.first_name),
             html.escape(chat.title)),
             parse_mode=ParseMode.HTML,

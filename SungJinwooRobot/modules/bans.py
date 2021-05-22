@@ -212,9 +212,7 @@ def dban(update: Update, context: CallbackContext) -> str:
                 mention_html(member.user.id, member.user.first_name),
                 html.escape(chat.title)
         )
-        if reason:
-            reply += f"\n<code> </code><b>•  Reason:</b> \n{html.escape(reason)}"
-        bot.sendMessage(chat.id, reply, parse_mode=ParseMode.HTML, quote=False)
+        parse_mode=ParseMode.HTML, quote=False)
         
         
 

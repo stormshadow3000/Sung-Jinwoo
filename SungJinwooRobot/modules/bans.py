@@ -207,8 +207,10 @@ def dban(update: Update, context: CallbackContext) -> str:
         chat.kick_member(user_id)
         context.bot.sendMessage(
             chat.id,
-            f"<code>❕</code><b>Ban Event</b>\n"
-            f"<code> </code><b>•  User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
+            "Successfully banned {} in <b>{}</b>!.".format(
+                
+                mention_html(member.user.id, member.user.first_name),
+                html.escape(chat.title)
         )
         if reason:
             reply += f"\n<code> </code><b>•  Reason:</b> \n{html.escape(reason)}"

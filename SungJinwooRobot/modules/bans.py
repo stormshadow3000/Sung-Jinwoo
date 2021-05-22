@@ -211,9 +211,9 @@ def dban(update: Update, context: CallbackContext) -> str:
                 
                 mention_html(member.user.id, member.user.first_name),
                 html.escape(chat.title)
+            ),
+        parse_mode=ParseMode.HTML,
         )
-        parse_mode=ParseMode.HTML, quote=False)
-        
         
 
  

@@ -633,7 +633,7 @@ UNBAN_HANDLER = CommandHandler("unban", unban)
 ROAR_HANDLER = CommandHandler("roar", selfunban)
 PUNCHME_HANDLER = DisableAbleCommandHandler(["punchme", "kickme"], punchme, filters=Filters.group)
 DBAN_HANDLER = CommandHandler("dban", dban)
-DKICK_HANDLER = CommandHandler("dkick", dkick)
+DKICK_HANDLER = CommandHandler(["dkick","dbonk"] dkick)
 
 dispatcher.add_handler(BAN_HANDLER)
 dispatcher.add_handler(TEMPBAN_HANDLER)

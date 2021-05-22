@@ -210,7 +210,7 @@ def dban(update: Update, context: CallbackContext) -> str:
             "Successfully banned {} in <b>{}</b>!.\n<b>Reason<b>:{}".format(
                 
                 mention_html(member.user.id, member.user.first_name),
-                html.escape(chat.title)
+                html.escape(chat.title),
                 html.escape(reason)
             ),
         parse_mode=ParseMode.HTML,

@@ -180,6 +180,7 @@ def get_all_ignored(chat_id):
     return GLOBAL_IGNORE_COMMANDS, LOCAL_IGNORE_COMMANDS
 
 
+
 def __load_cleaner_list():
     global GLOBAL_IGNORE_COMMANDS
     global CLEANER_CHATS

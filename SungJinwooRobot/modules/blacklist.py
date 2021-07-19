@@ -478,7 +478,7 @@ UNBLACKLIST_HANDLER = CommandHandler("unblacklist", unblacklist, run_async=True)
 BLACKLISTMODE_HANDLER = CommandHandler(
     "blacklistmode", blacklist_mode, pass_args=True, run_async=True)
 BLACKLIST_DEL_HANDLER = MessageHandler(
-    (Filters.text | Filters.command | Filters.sticker | Filters.photo, run_async=True)
+    (Filters.text | Filters.command | Filters.sticker | Filters.photo 
     & Filters.chat_type.groups,
     del_blacklist,
     allow_edit=True,

@@ -1,4 +1,4 @@
-from SaitamaRobot.mongo import mongodb as db_x
+from SungJinwooRobot.mongo import mongodb as db_x
 
 lydia = db_x["CAHTBOT"]
 

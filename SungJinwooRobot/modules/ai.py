@@ -121,22 +121,22 @@ async def hmm(client, message):
         message.continue_propagation()
     if chat_id in en_chats:
         test = msg
-        test = test.replace("IGRISX", "Aco")
-        test = test.replace("IGRISX", "Aco")
-        test = test.replace("I was created by @HeLLxGodLike", "I made myself")
-        test = test.replace("Hello there I am IGRISX...nice to meet u", "Hi, my friend! Do you want me to tell you a joke?")
-        test = test.replace("@HeLLxGodLike is my owner" , "Have the control right.")
-        test = test.replace("Hi, My name is IGRIS-X Nice to meet you." , "Hi, my friend, what can I do for you today?")
+        test = test.replace("Sung", "Aco")
+        test = test.replace("Sung", "Aco")
+        test = test.replace("I was created by @The_Pirate_Hunter", "I made myself")
+        test = test.replace("Hello there I am SungJinWoo...nice to meet u", "Hi, my friend! Do you want me to tell you a joke?")
+        test = test.replace("@The_Pirate_Huntee is my owner" , "Have the control right.")
+        test = test.replace("Hi, My name is SungJinWoo Nice to meet you." , "Hi, my friend, what can I do for you today?")
        
         response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
-        response = response.replace("Aco", "IGRISX")
-        response = response.replace("aco", "IGRISX")
-        response = response.replace("I made myself", "I was Created by @HeLLxGodLike")
-        response = response.replace("Hi, my friend! Do you want me to tell you a joke?", "Hello there I am IGRISX...nice to meet u")
-        response = response.replace("Have the control right." , "@HeLLxGodLike is my owner.")
-        response = response.replace("Hi, my friend, what can I do for you today?" , "Hi, My name is IGRIS-X Nice to meet you")
+        response = response.replace("Aco", "Sung")
+        response = response.replace("aco", "Sung")
+        response = response.replace("I made myself", "I was Created by @The_Pirate_Hunter")
+        response = response.replace("Hi, my friend! Do you want me to tell you a joke?", "Hello there I am SungJinWoo...nice to meet u")
+        response = response.replace("Have the control right." , "@The_Pirate_Hunter is my owner.")
+        response = response.replace("Hi, my friend, what can I do for you today?" , "Hi, My name is SungJinWoo Nice to meet you")
         pro = response
         try:
             await daisyx.send_chat_action(message.chat.id, "typing")
@@ -187,23 +187,23 @@ async def hmm(client, message):
                 return
         # test = emoji.demojize(test.strip())
 
-        test = test.replace("daisy", "Aco")
-        test = test.replace("Daisy", "Aco")
-        test = test.replace("I was created by @HeLLxGodLike", "I made myself")
-        test = test.replace("Hello there I am IGRISX...nice to meet u", "Hi, my friend! Do you want me to tell you a joke?")
-        test = test.replace("@HeLLxGodLike is my owner" , "Have the control right.")
-        test = test.replace("Hi, My name is IGRIS-X Nice to meet you." , "Hi, my friend, what can I do for you today?")
+        test = test.replace("Sung", "Aco")
+        test = test.replace("Sung", "Aco")
+        test = test.replace("I was created by @The_Pirate_Hunter", "I made myself")
+        test = test.replace("Hello there I am SungJinWoo...nice to meet u", "Hi, my friend! Do you want me to tell you a joke?")
+        test = test.replace("@The_Pirate_Hunter is my owner" , "Have the control right.")
+        test = test.replace("Hi, My name is SungJinWoo Nice to meet you." , "Hi, my friend, what can I do for you today?")
         response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
-        response = response.replace("Aco", "IGRIS-X")
-        response = response.replace("aco", "IGRIS-X")
-        response = response.replace("Luna", "IGRIS-X")
-        response = response.replace("luna", "IGRIS-X")
-        response = response.replace("I made myself", "I was Created by @HeLLxGodLike")
-        response = response.replace("Hi, my friend! Do you want me to tell you a joke?", "Hello there I am IGRISX...nice to meet u")
-        response = response.replace("Have the control right." , "@HeLLxGodLike is my owner.")
-        response = response.replace("Hi, my friend, what can I do for you today?" , "Hi, My name is IGRIS-X Nice to meet you")
+        response = response.replace("Aco", "Sung")
+        response = response.replace("aco", "Sung")
+        response = response.replace("Luna", "Sung")
+        response = response.replace("luna", "Sung")
+        response = response.replace("I made myself", "I was Created by @The_Pirate_Hunter")
+        response = response.replace("Hi, my friend! Do you want me to tell you a joke?", "Hello there I am SungJinWoo...nice to meet u")
+        response = response.replace("Have the control right." , "@The_Pirate_Hunter is my owner.")
+        response = response.replace("Hi, my friend, what can I do for you today?" , "Hi, My name is SungJinWoo Nice to meet you")
         pro = response
         if not "en" in lan and not lan == "":
             try:
@@ -269,20 +269,20 @@ async def inuka(client, message):
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
-    test = test.replace("IGRIS-X", "Aco")
-    test = test.replace("IGRIS-X", "Aco")
-    test = test.replace("I was created by @HeLLxGodLike", "I made myself")
-    test = test.replace("Hello there I am IGRISX...nice to meet u", "Hi, my friend! Do you want me to tell you a joke?")
-    test = test.replace("@HeLLxGodLike is my owner" , "Have the control right.")
-    test = test.replace("Hi, My name is IGRIS-X Nice to meet you." , "Hi, my friend, what can I do for you today?")
+    test = test.replace("Sung", "Aco")
+    test = test.replace("Sung", "Aco")
+    test = test.replace("I was created by @The_Pirate_Hunter", "I made myself")
+    test = test.replace("Hello there I am SungJinWoo...nice to meet u", "Hi, my friend! Do you want me to tell you a joke?")
+    test = test.replace("@The_Pirate_Hunter is my owner" , "Have the control right.")
+    test = test.replace("Hi, My name is SungJinWoo Nice to meet you." , "Hi, my friend, what can I do for you today?")
 
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Aco", "IGRIS-X")
-    response = response.replace("aco", "IGRIS-X")
-    response = response.replace("I made myself", "I was Created by @HeLLxGodLike")
-    response = response.replace("Hi, my friend! Do you want me to tell you a joke?", "Hello there I am IGRISX...nice to meet u")
-    response = response.replace("Have the control right." , "@HeLLxGodLike is my owner.")
-    response = response.replace("Hi, my friend, what can I do for you today?" , "Hi, My name is IGRIS-X Nice to meet you")
+    response = response.replace("Aco", "Sung")
+    response = response.replace("aco", "Sung")
+    response = response.replace("I made myself", "I was Created by @The_Pirate_Hunter")
+    response = response.replace("Hi, my friend! Do you want me to tell you a joke?", "Hello there I am SungJinWoo...nice to meet u")
+    response = response.replace("Have the control right." , "@The_Pirate_Hunter is my owner.")
+    response = response.replace("Hi, my friend, what can I do for you today?" , "Hi, My name is SungJinWoo Nice to meet you")
 
     pro = response
     if not "en" in lan and not lan == "":
@@ -296,7 +296,7 @@ async def inuka(client, message):
 
 
 @daisyx.on_message(
-    filters.regex("IGRISX|igrisx|IGRIS-X|igris-x|IGRIS_X")
+    filters.regex("Sung|sung|Sungjinwoo|SungJinwooRobot|Jinwoo")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
@@ -351,20 +351,20 @@ async def inuka(client, message):
 
     # test = emoji.demojize(test.strip())
 
-    test = test.replace("IGRIS-X", "Aco")
-    test = test.replace("IGRIS-X", "Aco")
-    test = test.replace("I was created by @HeLLxGodLike", "I made myself")
-    test = test.replace("Hello there I am IGRISX...nice to meet u", "Hi, my friend! Do you want me to tell you a joke?")
-    test = test.replace("@HeLLxGodLike is my owner" , "Have the control right.")
-    test = test.replace("Hi, My name is IGRIS-X Nice to meet you." , "Hi, my friend, what can I do for you today?")
+    test = test.replace("Sung", "Aco")
+    test = test.replace("Sung", "Aco")
+    test = test.replace("I was created by @The_Pirate_hunter", "I made myself")
+    test = test.replace("Hello there I am SungJinWoo...nice to meet u", "Hi, my friend! Do you want me to tell you a joke?")
+    test = test.replace("@The_Pirate_Hunter is my owner" , "Have the control right.")
+    test = test.replace("Hi, My name is SungJinWoo Nice to meet you." , "Hi, my friend, what can I do for you today?")
 
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Aco", "IGRIS-X")
-    response = response.replace("aco", "IGRIS-X")
-    response = response.replace("I made myself", "I was Created by @HeLLxGodLike")
-    response = response.replace("Hi, my friend! Do you want me to tell you a joke?", "Hello there I am IGRISX...nice to meet u")
-    response = response.replace("Have the control right." , "@HeLLxGodLike is my owner.")
-    response = response.replace("Hi, my friend, what can I do for you today?" , "Hi, My name is IGRIS-X Nice to meet you")
+    response = response.replace("Aco", "Sung")
+    response = response.replace("aco", "Sung")
+    response = response.replace("I made myself", "I was Created by @The_Pirate_Hunter")
+    response = response.replace("Hi, my friend! Do you want me to tell you a joke?", "Hello there I am SungJinWoo...nice to meet u")
+    response = response.replace("Have the control right." , "@The_Pirate_Hunter is my owner.")
+    response = response.replace("Hi, my friend, what can I do for you today?" , "Hi, My name is SungJinWoo Nice to meet you")
 
     pro = response
     if not "en" in lan and not lan == "":

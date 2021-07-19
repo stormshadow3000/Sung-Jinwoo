@@ -69,7 +69,7 @@ async def hmm(_, message):
             await lel.edit("SUNG AI Already Activated In This Chat")
             return
         await lel.edit(
-            f"IGRIS-X AI Successfully Added For Users In The Chat"
+            f"SUNG AI Successfully Added For Users In The Chat"
         )
 
     elif status == "OFF" or status == "off" or status == "Off":

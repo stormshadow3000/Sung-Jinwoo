@@ -1,4 +1,4 @@
-from SaitamaRobot import MONGO_DB_URI
+from SungJinwooRobot import MONGO_DB_URI
 from pymongo import MongoClient
 from typing import Dict, List, Union
 

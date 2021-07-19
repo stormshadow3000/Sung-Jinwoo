@@ -19,7 +19,7 @@ import sys
 import yaml
 from envparse import env
 
-from SaitamaRobot.utils.logger import log
+from SungJinwooRobot.utils.logger import log
 
 DEFAULTS = {
     'LOAD_MODULES': True,

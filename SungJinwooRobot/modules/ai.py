@@ -14,7 +14,7 @@ from pyrogram import filters
 
 from SungJinwooRobot.utils.aichat import add_chat, get_session, remove_chat
 from SungJinwooRobot.utils.pluginshelper import admins_only, edit_or_reply
-from SaitamaRobot import pgram as daisyx
+from SungJinwooRobot import pgram as daisyx
 
 translator = google_translator()
 

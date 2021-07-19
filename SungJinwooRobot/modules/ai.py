@@ -11,7 +11,7 @@ import aiohttp
 from googletrans import Translator as google_translator
 # from google_trans_new import google_translator
 from pyrogram import filters
-
+from SungJinwooRobot import arq
 from SungJinwooRobot.utils.aichat import add_chat, get_session, remove_chat
 from SungJinwooRobot.utils.pluginshelper import admins_only, edit_or_reply
 from SungJinwooRobot import pgram as daisyx

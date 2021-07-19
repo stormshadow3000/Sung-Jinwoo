@@ -235,7 +235,7 @@ SET_CLEAN_BLUE_TEXT_HANDLER = CommandHandler("cleanblue", set_blue_text_must_cli
 ADD_CLEAN_BLUE_TEXT_HANDLER = CommandHandler("ignoreblue", add_bluetext_ignore, run_async=True)
 REMOVE_CLEAN_BLUE_TEXT_HANDLER = CommandHandler("unignoreblue", remove_bluetext_ignore, run_async=True)
 ADD_CLEAN_BLUE_TEXT_GLOBAL_HANDLER = CommandHandler(
-    "gignoreblue", add_bluetext_ignore_global, run_async=Truez
+    "gignoreblue", add_bluetext_ignore_global, run_async=True
 )
 REMOVE_CLEAN_BLUE_TEXT_GLOBAL_HANDLER = CommandHandler(
     "ungignoreblue", remove_bluetext_ignore_global, run_async=True,

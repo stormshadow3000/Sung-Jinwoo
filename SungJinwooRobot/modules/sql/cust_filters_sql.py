@@ -2,8 +2,8 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, Boolean, Integer, distinct, func
 
-from SungJinwooRobot.modules.helper_funcs.msg_types import Types
-from SungJinwooRobot.modules.sql import BASE, SESSION
+from SaitamaRobot.modules.helper_funcs.msg_types import Types
+from SaitamaRobot.modules.sql import BASE, SESSION
 
 
 class CustomFilters(BASE):
@@ -370,8 +370,8 @@ def migrate_chat(old_chat_id, new_chat_id):
         SESSION.commit()
         old_filt = CHAT_FILTERS.get(str(old_chat_id))
         if old_filt:
-            CHAT_FILTERS[str(new_chat_id)] = old_filt
-            del CHAT_FILTERS[str(old_chat_id)]
+           CHAT_FILTERS[str(new_chat_id)] = old_filt
+           del CHAT_FILTERS[str(old_chat_id)]
 
         with BUTTON_LOCK:
             chat_buttons = (

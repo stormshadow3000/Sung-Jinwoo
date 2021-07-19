@@ -11,7 +11,7 @@ from SungJinwooRobot.modules.disable import DisableAbleCommandHandler
 
 import SungJinwooRobot.modules.sql.last_fm_sql as sql
 
-@run_async
+
 def set_user(update: Update, context: CallbackContext):
     args = context.args
     msg = update.effective_message
@@ -25,7 +25,7 @@ def set_user(update: Update, context: CallbackContext):
             "That's not how this works...\nRun /setuser followed by your username!"
         )
 
-@run_async
+
 def clear_user(update: Update, _):
     user = update.effective_user.id
     sql.set_user(user, "")
@@ -33,7 +33,7 @@ def clear_user(update: Update, _):
         "Last.fm username successfully cleared from my database!"
     )
 
-@run_async
+
 def last_fm(update: Update, _):
     msg = update.effective_message
     user = update.effective_user.first_name
@@ -102,9 +102,9 @@ __help__ = """
  •  /clearuser: removes your lastfm username from the bot's database.
  •  /lastfm: returns what you're scrobbling on last.fm.
 """
-SET_USER_HANDLER = CommandHandler("setuser", set_user, pass_args=True)
-CLEAR_USER_HANDLER = CommandHandler("clearuser", clear_user)
-LASTFM_HANDLER = DisableAbleCommandHandler("lastfm", last_fm)
+SET_USER_HANDLER = CommandHandler("setuser", set_user, pass_args=True, run_async=True)
+CLEAR_USER_HANDLER = CommandHandler("clearuser", clear_user, run_async=True)
+LASTFM_HANDLER = DisableAbleCommandHandler("lastfm", last_fm, run_async=True)
 
 dispatcher.add_handler(SET_USER_HANDLER)
 dispatcher.add_handler(CLEAR_USER_HANDLER)

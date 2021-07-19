@@ -66,7 +66,7 @@ async def hmm(_, message):
         lel = await edit_or_reply(message, "`Processing...`")
         lol = add_chat(int(message.chat.id))
         if not lol:
-            await lel.edit("IGRIS-X AI Already Activated In This Chat")
+            await lel.edit("SUNG AI Already Activated In This Chat")
             return
         await lel.edit(
             f"IGRIS-X AI Successfully Added For Users In The Chat"
@@ -76,10 +76,10 @@ async def hmm(_, message):
         lel = await edit_or_reply(message, "`Processing...`")
         Escobar = remove_chat(int(message.chat.id))
         if not Escobar:
-            await lel.edit("IGRIS-X AI Was Not Activated In This Chat")
+            await lel.edit("SUNG AI Was Not Activated In This Chat")
             return
         await lel.edit(
-            f"IGRIS-X AI Successfully Deactivated For Users In The Chat"
+            f"SUNG AI Successfully Deactivated For Users In The Chat"
         )
 
     elif status == "EN" or status == "en" or status == "english":

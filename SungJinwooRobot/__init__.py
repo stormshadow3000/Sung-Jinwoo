@@ -220,7 +220,7 @@ updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("saitama", API_ID, API_HASH)
 pgram = Client("SungPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 mongo_client = MongoClient(MONGO_DB_URI)
-db = mongo_client.SaitamaRobot
+db = mongo_client.SungJinwooRobot
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 dispatcher = updater.dispatcher
 
@@ -231,7 +231,7 @@ DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
 
 # Load at end to ensure all prev variables have been set
-from SaitamaRobot.modules.helper_funcs.handlers import (CustomCommandHandler,
+from SungJinwooRobot.modules.helper_funcs.handlers import (CustomCommandHandler,
                                                         CustomMessageHandler,
                                                         CustomRegexHandler)
 

@@ -32,10 +32,6 @@ def check_flood(update, context) -> str:
     if is_user_admin(chat, user.id) or user.id in WOLVES or user.id in TIGERS:
         sql.update_flood(chat.id, None)
         return ""
-    # ignore approved users
-    if is_approved(chat.id, user.id):
-        sql.update_flood(chat.id, None)
-        return
     should_ban = sql.update_flood(chat.id, user.id)
     if not should_ban:
         return ""

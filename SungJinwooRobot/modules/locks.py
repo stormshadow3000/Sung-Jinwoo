@@ -653,7 +653,7 @@ LOCK_HANDLER = CommandHandler(
     "lock", lock, pass_args=True, run_async=True)  # , filters=Filters.chat_type.groups, run_async=True)
 UNLOCK_HANDLER = CommandHandler(
     "unlock", unlock, pass_args=True, run_async=True)  # , filters=Filters.chat_type.groups, run_async=True)
-LOCKED_HANDLER = CommandHandler("locks", list_lock, run_async=True)  # , filters=Filters.chat_type.groups, run_async=True)
+LOCKED_HANDLER = CommandHandler("locks", list_locks, run_async=True)  # , filters=Filters.chat_type.groups, run_async=True)
 
 dispatcher.add_handler(LOCK_HANDLER)
 dispatcher.add_handler(UNLOCK_HANDLER)

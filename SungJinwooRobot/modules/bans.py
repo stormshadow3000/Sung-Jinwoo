@@ -75,20 +75,20 @@ def ban(update: Update, context: CallbackContext) -> str:
             return log_message
         elif user_id in DRAGONS:
             message.reply_text(
-                "Fighting this S-RANK HUNTER here will put civilian lives at risk.")
+                "Fighting this A-RANK HUNTER here will put civilian lives at risk.")
             return log_message
         elif user_id in DEMONS:
             message.reply_text(
-                "Bring an order from SOLO•GUILD to fight a A-RANK HUNTER."
+                "Bring an order from Hunter Association to fight a B-RANK HUNTER."
             )
             return log_message
         elif user_id in TIGERS:
             message.reply_text(
-                "Bring an order from SOLO•GUILD to fight a B-RANK HUNTER."
+                "Bring an order from Hunter Association to fight a C-RANK HUNTER."
             )
             return log_message
         elif user_id in WOLVES:
-            message.reply_text("C-RANK HUNTER abilities make them ban immune!")
+            message.reply_text("D-RANK HUNTER abilities make them ban immune!")
             return log_message
         else:
             message.reply_text("This user has immunity and cannot be banned.")

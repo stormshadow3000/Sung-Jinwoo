@@ -66,10 +66,10 @@ async def hmm(_, message):
         lel = await edit_or_reply(message, "`Processing...`")
         lol = add_chat(int(message.chat.id))
         if not lol:
-            await lel.edit("SUNG AI Already Activated In This Chat")
+            await lel.edit("Sung Jin-woo AI Already Activated In This Chat")
             return
         await lel.edit(
-            f"SUNG AI Successfully Added For Users In The Chat"
+            f"Sung Jin-woo AI Successfully Added For Users In The Chat"
         )
 
     elif status == "OFF" or status == "off" or status == "Off":
@@ -79,7 +79,7 @@ async def hmm(_, message):
             await lel.edit("SUNG AI Was Not Activated In This Chat")
             return
         await lel.edit(
-            f"SUNG AI Successfully Deactivated For Users In The Chat"
+            f"Sung Jin-woo AI Successfully Deactivated For Users In The Chat"
         )
 
     elif status == "EN" or status == "en" or status == "english":
@@ -296,7 +296,7 @@ async def inuka(client, message):
 
 
 @daisyx.on_message(
-    filters.regex("Sung|sung|Sungjinwoo|SungJinwooRobot|Jinwoo")
+    filters.regex("|Sung-Jinwoo|Sung Jin woo|")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded

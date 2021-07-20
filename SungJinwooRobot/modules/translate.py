@@ -5,7 +5,7 @@ import aiohttp
 from cryptography.fernet import Fernet
 from pyrogram import filters
 from SungJinwooRobot import arq
-from SaitamaRobot import pgram as app
+from SungJinwooRobot import pgram as app
 
 @app.on_message(filters.command("tr") & ~filters.edited)
 async def tr(_, message):

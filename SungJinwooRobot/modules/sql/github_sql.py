@@ -2,8 +2,8 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, func, distinct, Integer
 
-from SaitamaRobot.modules.helper_funcs.msg_types import Types
-from SaitamaRobot.modules.sql import SESSION, BASE
+from SungJinwooRobot.modules.helper_funcs.msg_types import Types
+from SungJinwooRobot.modules.sql import SESSION, BASE
 
 
 class GitHub(BASE):

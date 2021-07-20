@@ -59,14 +59,9 @@ HELP_STRINGS = """
 Hey there! My name is *{}*.
 I help admins manage their groups with my Power Level! 
 
-*Main* commands available:
- • /help: PM's you this message.
+*Main* commands available[:](https://telegra.ph/file/a173b1217c3c7f48dd7da.jpg)
  • /help <module name>: PM's you info about that module.
- • /donate: information on how to donate!
- • /settings:
-   • in PM: will send you your settings for all supported modules.
-   • in a group: will redirect you to pm, with all that chat's settings.
-
+ • /settings: For group settinga 
 
 {}
 And the following:

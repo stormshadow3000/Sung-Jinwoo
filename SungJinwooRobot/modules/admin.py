@@ -19,7 +19,7 @@ from SungJinwooRobot.modules.log_channel import loggable
 from SungJinwooRobot.modules.helper_funcs.alternate import send_message
 
 
-
+@run_async
 @connection_status
 @bot_admin
 @can_promote
@@ -101,7 +101,7 @@ def promote(update: Update, context: CallbackContext) -> str:
     return log_message
 
 
-
+@run_async
 @connection_status
 @bot_admin
 @can_promote
@@ -174,7 +174,7 @@ def demote(update: Update, context: CallbackContext) -> str:
         return
 
 
-
+@run_async
 @user_admin
 def refresh_admin(update, _):
     try:
@@ -249,7 +249,7 @@ def set_title(update: Update, context: CallbackContext):
         parse_mode=ParseMode.HTML)
 
 
-
+@run_async
 @bot_admin
 @can_pin
 @user_admin
@@ -289,7 +289,7 @@ def pin(update: Update, context: CallbackContext) -> str:
         return log_message
 
 
-
+@run_async
 @bot_admin
 @can_pin
 @user_admin
@@ -315,7 +315,7 @@ def unpin(update: Update, context: CallbackContext) -> str:
     return log_message
 
 
-
+@run_async
 @bot_admin
 @user_admin
 @connection_status
@@ -340,7 +340,7 @@ def invite(update: Update, context: CallbackContext):
         )
 
 
-
+@run_async
 @connection_status
 def adminlist(update, context):
     chat = update.effective_chat  # type: Optional[Chat]
@@ -466,19 +466,19 @@ __help__ = """
  • `/admincache`*:* force refresh the admins list
 """
 
-ADMINLIST_HANDLER = DisableAbleCommandHandler("admins", adminlist, run_async=True)
+ADMINLIST_HANDLER = DisableAbleCommandHandler("admins", adminlist)
 
-PIN_HANDLER = CommandHandler("pin", pin, filters=Filters.chat_type.groups, run_async=True)
-UNPIN_HANDLER = CommandHandler("unpin", unpin, filters=Filters.chat_type.groups, run_async=True)
+PIN_HANDLER = CommandHandler("pin", pin, filters=Filters.group)
+UNPIN_HANDLER = CommandHandler("unpin", unpin, filters=Filters.group)
 
-INVITE_HANDLER = DisableAbleCommandHandler("invitelink", invite, run_async=True)
+INVITE_HANDLER = DisableAbleCommandHandler("invitelink", invite)
 
-PROMOTE_HANDLER = DisableAbleCommandHandler("promote", promote, run_async=True)
-DEMOTE_HANDLER = DisableAbleCommandHandler("demote", demote, run_async=True)
+PROMOTE_HANDLER = DisableAbleCommandHandler("promote", promote)
+DEMOTE_HANDLER = DisableAbleCommandHandler("demote", demote)
 
-SET_TITLE_HANDLER = CommandHandler("title", set_title, run_async=True)
+SET_TITLE_HANDLER = CommandHandler("title", set_title)
 ADMIN_REFRESH_HANDLER = CommandHandler(
-    "admincache", refresh_admin, filters=Filters.chat_type.groups, run_async=True)
+    "admincache", refresh_admin, filters=Filters.group)
 
 dispatcher.add_handler(ADMINLIST_HANDLER)
 dispatcher.add_handler(PIN_HANDLER)

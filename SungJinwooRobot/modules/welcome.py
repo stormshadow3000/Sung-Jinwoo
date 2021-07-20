@@ -228,14 +228,14 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                update.effective_chat.send_message(
-                    "Oh, Genos? Let's get this moving.",
+                    "Oh, My Owner just joined!",
                     reply_to_message_id=reply)
      
 
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                  update.effective_chat.send_message(
-                    "Whoa! S Rank Hunter just joined!",
+                    "Whoa! A S Rank Hunter just joined!",
                     reply_to_message_id=reply,
                 )
                 
@@ -243,7 +243,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Sudos
             elif new_mem.id in DRAGONS:
                  update.effective_chat.send_message(
-                    "Huh! A Rank Hunter just joined! Stay Alert!",
+                    "GOD! A Rank Hunter just joined! Stay Alert!",
                     reply_to_message_id=reply,
                 )
                 
@@ -251,7 +251,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Support
             elif new_mem.id in DEMONS:
                  update.effective_chat.send_message(
-                    "Huh! Someone with a B Rank Hunter level just joined!",
+                    "Huh a B-RANK?! Someone with a B-RANK HUNTER SKILL just joined!",
                     reply_to_message_id=reply,
                 )
               
@@ -259,14 +259,14 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Whitelisted
             elif new_mem.id in TIGERS:
                  update.effective_chat.send_message(
-                    "Oof! A C Rank Hunter just joined!",
+                    "OH YEAH! A C-RANK Hunter just joined!",
                     reply_to_message_id=reply)
               
 
             # Welcome Tigers
             elif new_mem.id in WOLVES:
                  update.effective_chat.send_message(
-                    "Oof! A D Rank Hunter just joined!",
+                    "JEZZ! A D-RANK Hunter just joined!",
                     reply_to_message_id=reply)
             
 
@@ -527,7 +527,7 @@ def left_member(update: Update, context: CallbackContext):
             # Give the owner a special goodbye
             if left_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "Oh Genos! He left..", reply_to_message_id=reply
+                    "Oh, My Owner! He left..", reply_to_message_id=reply
                 )
                 return
             # Give the devs a special goodbye
@@ -1020,28 +1020,28 @@ def __chat_settings__(chat_id, user_id):
 
 __help__ = """
 *Admins only:*
- ➢ /welcome <on/off>*:* enable/disable welcome messages.
- ➢ /welcome*:* shows current welcome settings.
- ➢ /welcome noformat*:* shows current welcome settings, without the formatting - useful to recycle your welcome messages!
- ➢ /goodbye*:* same usage and args as `/welcome`.
- ➢ /setwelcome <sometext>*:* set a custom welcome message. If used replying to media, uses that media.
- ➢ /setgoodbye <sometext>*:* set a custom goodbye message. If used replying to media, uses that media.
- ➢ /resetwelcome*:* reset to the default welcome message.
- ➢ /resetgoodbye*:* reset to the default goodbye message.
- ➢ /cleanwelcome <on/off>*:* On new member, try to delete the previous welcome message to avoid spamming the chat.
- ➢ /welcomemutehelp*:* gives information about welcome mutes.
- ➢ /cleanservice <on/off*:* deletes telegrams welcome/left service messages. 
+ • /welcome <on/off>*:* enable/disable welcome messages.
+ • /welcome*:* shows current welcome settings.
+ • /welcome noformat*:* shows current welcome settings, without the formatting - useful to recycle your welcome messages!
+ • /goodbye*:* same usage and args as `/welcome`.
+ • /setwelcome <sometext>*:* set a custom welcome message. If used replying to media, uses that media.
+ • /setgoodbye <sometext>*:* set a custom goodbye message. If used replying to media, uses that media.
+ • /resetwelcome*:* reset to the default welcome message.
+ • /resetgoodbye*:* reset to the default goodbye message.
+ • /cleanwelcome <on/off>*:* On new member, try to delete the previous welcome message to avoid spamming the chat.
+ • /welcomemutehelp*:* gives information about welcome mutes.
+ • /cleanservice <on/off*:* deletes telegrams welcome/left service messages. 
  *Example:*
 user joined chat, user left chat.
 *Welcome markdown:* 
- ➢ /welcomehelp*:* view more formatting information for custom welcome/goodbye messages.
+ • /welcomehelp*:* view more formatting information for custom welcome/goodbye messages.
 
     「 Rules Commands」
- ➢ /rules*:* get the rules for this chat.
+ • /rules*:* get the rules for this chat.
 
 *Admins only:*
- ➢ /setrules <your rules here>*:* set the rules for this chat.
- ➢ /clearrules*:* clear the rules for this chat.
+ • /setrules <your rules here>*:* set the rules for this chat.
+ • /clearrules*:* clear the rules for this chat.
 
 """
 

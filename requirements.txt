@@ -65,6 +65,7 @@ motor
 dnspython
 cryptography
 pymongo
+gpytranslate
 pykeyboard
 envparse
 aiofiles

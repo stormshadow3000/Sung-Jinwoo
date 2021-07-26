@@ -68,10 +68,10 @@ buttons = [
     ],
     [        
         InlineKeyboardButton(
-        text="📌Support📌", url=f"https://t.me/{SUPPORT_CHAT}"
+        text="🚔 Support", url=f"https://t.me/{SUPPORT_CHAT}"
         ),
         InlineKeyboardButton(
-        text="🗡️Solo Leveling🗡️", url=f"https://t.me/Solo_Leveling_Webtoon"
+        text="🗡️ Solo Leveling", url=f"https://t.me/Solo_Leveling_Webtoon"
         ),
     ],
     [

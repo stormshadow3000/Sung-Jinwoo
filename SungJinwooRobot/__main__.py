@@ -81,7 +81,7 @@ buttons = [
     ]
 ]
 HELP_STRINGS = """
-*Main Commands*[:](https://telegra.ph/file/11777b5c6d4a0d79c3428.jpg)
+*Main Commands*[:](https://telegra.ph/file/d710ff5cd45d3ee44396e.jpg)
 ✏️ /help: PM's you this message.
 ✏️ /start: You have already used it.
 *All commands can either be used with / or !.*  

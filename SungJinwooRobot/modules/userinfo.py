@@ -313,25 +313,24 @@ def info(update: Update, context: CallbackContext):
 
     if INFOPIC:
         try:
-            profile = context.bot.get_user_profile_photos(user.id).photos[0][-1]
-            _file = bot.get_file(profile["file_id"])
-            _file.download(f"{user.id}.png")
-
-            message.reply_document(
-                document=open(f"{user.id}.png", "rb"),
-                caption=(text),
-                parse_mode=ParseMode.HTML,
-                )
-
+            profile = context.bot.get_file(context.bot.get_user_profile_photos(user.id).photos[0][-1]["file_id"])
+            profile.download(f"{user.id}.png")
+            context.bot.sendChatAction(chat.id, "upload_photo")
+            context.bot.send_document(
+              chat.id,
+              document=open(f"{user.id}.png", "rb"),
+              caption=(text),
+              parse_mode=ParseMode.HTML,            
+            )
             os.remove(f"{user.id}.png")
         # Incase user don't have profile pic, send normal text
         except IndexError:
             message.reply_text(
-                text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
+                text, parse_mode=ParseMode.HTML)
 
     else:
         message.reply_text(
-            text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
+            text, parse_mode=ParseMode.HTML)
 
     rep.delete()
 

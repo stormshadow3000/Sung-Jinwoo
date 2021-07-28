@@ -128,7 +128,104 @@ def ban(update: Update, context: CallbackContext) -> str:
 
     return log_message
 
+######################
+@run_async
+@bot_admin
+@can_restrict
+@user_admin
+@loggable
+def dban(update: Update, context: CallbackContext) -> str:
+    chat = update.effective_chat  # type: Optional[Chat]
+    user = update.effective_user  # type: Optional[User]
+    message = update.effective_message  # type: Optional[Message]
+    args = context.args
+    bot = context.bot
 
+
+    #if user_can_ban(chat, user, context.bot.id) is False:
+    #    message.reply_text("You don't have enough rights to ban users!")
+    #    return ""
+
+    if message.reply_to_message:
+        user = update.effective_user  # type: Optional[User]
+        chat = update.effective_chat  # type: Optional[Chat]
+        if can_delete(chat, bot.id):
+            update.effective_message.reply_to_message.delete()
+    else:
+        message.reply_text("You have to reply to a message to delete it and ban the user.")
+        return ""
+
+    user_id, reason = extract_user_and_text(message, args)
+
+    try:
+        member = chat.get_member(user_id)
+    except BadRequest as excp:
+        if excp.message == "User not found":
+            message.reply_text("I can't seem to find this user")
+            return ""
+        else:
+            raise
+
+    if is_user_ban_protected(chat, user_id, member):
+        message.reply_text("I'm not gonna ban an admin, don't make fun of yourself!")
+        return ""
+
+    if user_id == context.bot.id:
+        message.reply_text("I'm not gonna ban myself, that's pretty dumb idea!")
+        return ""
+    
+    if user_id == 777000 or user_id == 1087968824:
+        message.reply_text(str(user_id) + " is an account reserved for telegram, I cannot ban it!")
+        return ""            
+
+    log = (
+        "<b>{}:</b>"
+        "\n#BANNED"
+        "\n<b>Admin:</b> {}"
+        "\n<b>User:</b> {} (<code>{}</code>)".format(   
+            html.escape(chat.title),
+            mention_html(user.id, user.first_name),
+            mention_html(member.user.id, member.user.first_name),
+            member.user.id,
+        )
+    )
+    if reason:
+        log += "\n<b>Reason:</b> {}".format(reason)
+
+    try:
+        chat.kick_member(user_id)
+        context.bot.sendMessage(
+            chat.id,
+            "Successfully banned {} in <b>{}</b>!.".format(
+                
+                mention_html(member.user.id, member.user.first_name),
+                html.escape(chat.title)
+                
+            ),
+        parse_mode=ParseMode.HTML,
+        )
+        
+
+ 
+        return log
+
+    except BadRequest as excp:
+        if excp.message == "Reply message not found":
+            # Do not reply
+            message.reply_text("Banned!", quote=False)
+            return log
+        else:
+            LOGGER.warning(update)
+            LOGGER.exception(
+                "ERROR banning user %s in chat %s (%s) due to %s",
+                user_id,
+                chat.title,
+                chat.id,
+                excp.message,
+            )
+            message.reply_text("Well damn, I can't ban that user.")
+
+    return ""
   
 @connection_status
 @bot_admin
@@ -573,6 +670,7 @@ __help__ = """
 *Bans:*
 ➢ `/ban <userhandle>`*:* Bans a user. (via handle, or reply)
 ➢ `/sban <userhandle>`*:* Silently bans a user without leaving any message. (via handle, or reply)
+➢ `/dban` <userhandle>: Bans a user and also deletes the message sent by banned user.
 ➢ `/tban <userhandle> x(m/h/d)`*:* Bans a user for `x` time. (via handle, or reply). `m` = `minutes`, `h` = `hours`, `d` = `days`.
 ➢ `/stban <userhandle> x(m/h/d)`*:* Silently bans a user for `x` time. (via handle, or reply). `m` = `minutes`, `h` = `hours`, `d` = `days`.
 ➢ `/unban <userhandle>`*:* Unbans a user. (via handle, or reply)
@@ -585,6 +683,7 @@ BAN_HANDLER = CommandHandler("ban", ban, run_async=True)
 TEMPBAN_HANDLER = CommandHandler(["tban"], temp_ban, run_async=True)
 STEMPBAN_HANDLER = CommandHandler(["stban"], stemp_ban, run_async=True)
 KICK_HANDLER = CommandHandler("kick", kick, run_async=True)
+DBAN_HANDLER = CommandHandler("dban", dban, run_async=True)
 SKICK_HANDLER = CommandHandler("skick", skick, run_async=True)
 UNBAN_HANDLER = CommandHandler("unban", unban, run_async=True)
 ROAR_HANDLER = CommandHandler("roar", selfunban, run_async=True)
@@ -596,6 +695,7 @@ dispatcher.add_handler(BAN_HANDLER)
 dispatcher.add_handler(TEMPBAN_HANDLER)
 dispatcher.add_handler(STEMPBAN_HANDLER)
 dispatcher.add_handler(KICK_HANDLER)
+dispatcher.add_handler(DBAN_HANDLER)
 dispatcher.add_handler(SKICK_HANDLER)
 dispatcher.add_handler(UNBAN_HANDLER)
 dispatcher.add_handler(ROAR_HANDLER)
@@ -604,6 +704,6 @@ dispatcher.add_handler(SBAN_HANDLER)
 
 __mod_name__ = "Bans"
 __handlers__ = [
-    BAN_HANDLER, TEMPBAN_HANDLER, STEMPBAN_HANDLER, KICK_HANDLER, SKICK_HANDLER, UNBAN_HANDLER, ROAR_HANDLER,
+    BAN_HANDLER, TEMPBAN_HANDLER, STEMPBAN_HANDLER, DBAN_HANDLER, KICK_HANDLER, SKICK_HANDLER, UNBAN_HANDLER, ROAR_HANDLER,
     KICKME_HANDLER, SBAN_HANDLER
 ]

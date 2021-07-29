@@ -126,7 +126,7 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "*{}* is AFK!\nSays it's because of:\n`{}`\nSince: `{}`".format(fst_name, reason, since_afk)
+            res = "*{}* is AFK!\n*Reason*:`{}`\nSince: `{}`".format(fst_name, reason, since_afk)
             update.effective_message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
 
 

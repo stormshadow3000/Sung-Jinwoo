@@ -682,7 +682,7 @@ __help__ = """
 BAN_HANDLER = CommandHandler("ban", ban, run_async=True)
 TEMPBAN_HANDLER = CommandHandler(["tban"], temp_ban, run_async=True)
 STEMPBAN_HANDLER = CommandHandler(["stban"], stemp_ban, run_async=True)
-KICK_HANDLER = CommandHandler("kick", kick, run_async=True)
+KICK_HANDLER = CommandHandler(["kick", "bonk"], kick, run_async=True)
 DBAN_HANDLER = CommandHandler("dban", dban, run_async=True)
 SKICK_HANDLER = CommandHandler("skick", skick, run_async=True)
 UNBAN_HANDLER = CommandHandler("unban", unban, run_async=True)

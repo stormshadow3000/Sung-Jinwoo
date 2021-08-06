@@ -36,10 +36,15 @@ def afk(update, context):
     REDIS.set(f'afk_time_{update.effective_user.id}', start_afk_time)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text(
+        helx = update.effective_message.reply_text(
             "{} is now Away!".format(fname))
+        time.sleep(5)
+        try:
+            helx.delete()
+        except BadRequest:
+            pass
     except BadRequest:
-        pass
+         pass
 
 
 def no_longer_afk(update, context):
@@ -58,8 +63,13 @@ def no_longer_afk(update, context):
             return
         firstname = update.effective_user.first_name
         try:
-            message.reply_text(
-                "*{}* is no longer AFK!\nTime you were AFK for: `{}`".format(firstname, end_afk_time), parse_mode=ParseMode.MARKDOWN)
+             helx = message.reply_text(
+                "{} is no longer AFK!\nTime you were AFK for: {}".format(firstname, end_afk_time))
+             time.sleep(5)
+             try:
+                 helx.delete()
+             except BadRequest:
+                 pass
         except Exception:
             return
 
@@ -121,14 +131,18 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if reason == "none":
             if int(userc_id) == int(user_id):
                 return
-            res = "*{}* is AFK!\nSince: `{}`".format(fst_name, since_afk)
-            update.effective_message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
+            res = "{} is AFK!\nSince: {}".format(fst_name, since_afk)
+            update.effective_message.reply_text(res)
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "*{}* is AFK!\n*Reason*: `{}`\nSince: `{}`".format(fst_name, reason, since_afk)
-            update.effective_message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
-
+            res = "{} is AFK! Says it's because of:\n{}\nSince: {}".format(fst_name, reason, since_afk)
+            helx = update.effective_message.reply_text(res)
+            time.sleep(5)
+            try:
+                helx.delete()
+            except BadRequest:
+                pass
 
 def __user_info__(user_id):
     is_afk = is_user_afk(user_id)

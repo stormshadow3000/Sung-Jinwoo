@@ -678,15 +678,17 @@ def button(update, context):
             query.answer("You are not allowed to use this.")
 
 def anime_quote():
-    url = "https://animechanapi.xyz/api/quotes/random"
-    response = requests.get(url)
+    url = "https://animechan.vercel.app/api/random"
     # since text attribute returns dictionary like string
-    dic = json.loads(response.text)
-    quote = dic["data"][0]["quote"]
-    character = dic["data"][0]["character"]
-    anime = dic["data"][0]["anime"]
+    response = requests.get(url)
+    try:
+        dic = json.loads(response.text)
+    except Exception:
+        pass
+    quote = dic["quote"]
+    character = dic["character"]
+    anime = dic["anime"]
     return quote, character, anime
-
 
 
 def quotes(update: Update, context: CallbackContext):
@@ -694,14 +696,13 @@ def quotes(update: Update, context: CallbackContext):
     quote, character, anime = anime_quote()
     msg = f"<i>❝{quote}❞</i>\n\n<b>{character} from {anime}</b>"
     keyboard = InlineKeyboardMarkup(
-        [[InlineKeyboardButton(text="Change", callback_data="change_quote")]]
+        [[InlineKeyboardButton(text="Change🔁", callback_data="change_quote")]]
     )
     message.reply_text(
         msg,
         reply_markup=keyboard,
         parse_mode=ParseMode.HTML,
     )
-
 
 
 def change_quote(update: Update, context: CallbackContext):
@@ -711,10 +712,9 @@ def change_quote(update: Update, context: CallbackContext):
     quote, character, anime = anime_quote()
     msg = f"<i>❝{quote}❞</i>\n\n<b>{character} from {anime}</b>"
     keyboard = InlineKeyboardMarkup(
-        [[InlineKeyboardButton(text="Change", callback_data="quote_change")]]
+        [[InlineKeyboardButton(text="Change🔁", callback_data="quote_change")]]
     )
     message.edit_text(msg, reply_markup=keyboard, parse_mode=ParseMode.HTML)
-
 
 
 __help__ = """

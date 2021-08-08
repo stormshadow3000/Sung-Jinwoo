@@ -512,7 +512,7 @@ def migrate_chats(update: Update, context: CallbackContext):
 
 
 def main():
-  #  test_handler = DissbleAbleCommandHandler("test", test, run_async=True)
+  #  test_handler = DisableAbleCommandHandler("test", test, run_async=True)
     start_handler = DisableAbleCommandHandler("start", start, pass_args=True, run_async=True)
 
     help_handler = DisableAbleCommandHandler("help", get_help, run_async=True)

@@ -24,6 +24,7 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
                           Filters, MessageHandler)
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
+from SungJinwooRobot.modules.disable import DisableAbleCommandHandler
 
 
 def get_readable_time(seconds: int) -> str:
@@ -511,17 +512,17 @@ def migrate_chats(update: Update, context: CallbackContext):
 
 
 def main():
-  #  test_handler = CommandHandler("test", test, run_async=True)
-    start_handler = CommandHandler("start", start, pass_args=True, run_async=True)
+  #  test_handler = DissbleAbleCommandHandler("test", test, run_async=True)
+    start_handler = DisableAbleCommandHandler("start", start, pass_args=True, run_async=True)
 
-    help_handler = CommandHandler("help", get_help, run_async=True)
+    help_handler = DisableAbleCommandHandler("help", get_help, run_async=True)
     help_callback_handler = CallbackQueryHandler(help_button, pattern=r"help_", run_async=True)
 
-    settings_handler = CommandHandler("settings", get_settings, run_async=True)
+    settings_handler = DisableAbleCommandHandler("settings", get_settings, run_async=True)
     settings_callback_handler = CallbackQueryHandler(
         settings_button, pattern=r"stngs_", run_async=True)
 
-    donate_handler = CommandHandler("donate", donate, run_async=True)
+    donate_handler = DisableAbleCommandHandler("donate", donate, run_async=True)
     migrate_handler = MessageHandler(Filters.status_update.migrate,
                                      migrate_chats, run_async=True)
 

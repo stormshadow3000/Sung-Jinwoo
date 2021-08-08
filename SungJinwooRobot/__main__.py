@@ -1,7 +1,4 @@
-import importlib
-import traceback
-import html
-import json
+import importlib, traceback, html, json
 import re
 import random
 import time
@@ -9,54 +6,24 @@ import subprocess
 from sys import argv
 from typing import Optional, List
 
-from SungJinwooRobot import (
-    ALLOW_EXCL, 
-    CERT_PATH,
-    DONATION_LINK,
-    LOGGER,
-    OWNER_ID,
-    PORT, 
-    SUPPORT_CHAT, 
-    TOKEN, 
-    URL, 
-    WEBHOOK,
-    dispatcher, 
-    StartTime, 
-    telethn,
-    updater, 
-    pgram,
-)
+
+from SungJinwooRobot import (ALLOW_EXCL, CERT_PATH, DONATION_LINK, LOGGER,
+                          OWNER_ID, PORT, SUPPORT_CHAT, TOKEN, URL, WEBHOOK,
+                          dispatcher, StartTime, telethn, updater, pgram)
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
 from SungJinwooRobot.modules import ALL_MODULES
 from SungJinwooRobot.modules.helper_funcs.chat_status import is_user_admin
 from SungJinwooRobot.modules.helper_funcs.misc import paginate_modules
 from SungJinwooRobot.modules.helper_funcs.alternate import typing_action
-from telegram import (
-    InlineKeyboardButton, 
-    InlineKeyboardMarkup,
-    ParseMode,
-    Update,
-)
-from telegram.error import (
-    BadRequest,
-    ChatMigrated,
-    NetworkError,
-    TelegramError,
-    TimedOut, 
-    Unauthorized,
-)
-from telegram.ext import (
-    CallbackContext, 
-    CallbackQueryHandler,
-    Filters, 
-)
+from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
+                      Update)
+from telegram.error import (BadRequest, ChatMigrated, NetworkError,
+                            TelegramError, TimedOut, Unauthorized)
+from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
+                          Filters, MessageHandler)
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
-from SungJinwooRobot.modules.disable import (
-    DisableAbleCommandHandler,
-    DisableAbleMessageHandler,
-)
 
 
 def get_readable_time(seconds: int) -> str:
@@ -544,25 +511,19 @@ def migrate_chats(update: Update, context: CallbackContext):
 
 
 def main():
-  #  test_handler = DisableAbleCommandHandler("test", test, run_async=True)
-    start_handler = DisableAbleCommandHandler("start", start, pass_args=True, run_async=True)
+  #  test_handler = CommandHandler("test", test, run_async=True)
+    start_handler = CommandHandler("start", start, pass_args=True, run_async=True)
 
-    help_handler = DisableAbleCommandHandler("help", get_help, run_async=True)
-    help_callback_handler = CallbackQueryHandler(
-        help_button, pattern=r"help_", run_async=True
-    )
+    help_handler = CommandHandler("help", get_help, run_async=True)
+    help_callback_handler = CallbackQueryHandler(help_button, pattern=r"help_", run_async=True)
 
-    settings_handler = DisableAbleCommandHandler(
-        "settings", get_settings, run_async=True
-    )
+    settings_handler = CommandHandler("settings", get_settings, run_async=True)
     settings_callback_handler = CallbackQueryHandler(
-        settings_button, pattern=r"stngs_", run_async=True
-    )
+        settings_button, pattern=r"stngs_", run_async=True)
 
-    donate_handler = DisableAbleCommandHandler("donate", donate, run_async=True)
-    migrate_handler = MessageHandler(
-        Filters.status_update.migrate, migrate_chats, run_async=True
-    )
+    donate_handler = CommandHandler("donate", donate, run_async=True)
+    migrate_handler = MessageHandler(Filters.status_update.migrate,
+                                     migrate_chats, run_async=True)
 
     # dispatcher.add_handler(test_handler)
     dispatcher.add_handler(start_handler)
@@ -587,12 +548,7 @@ def main():
 
     else:
         LOGGER.info("Using long polling.")
-        updater.start_polling(
-            timeout=15, 
-            read_latency=4, 
-            drop_pending_updates=True, 
-            allowed_updates=Update.ALL_TYPES,
-        )
+        updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True, allowed_updates=Update.ALL_TYPES)
 
     if len(argv) not in (1, 3, 4):
         telethn.disconnect()

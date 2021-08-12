@@ -37,7 +37,7 @@ def afk(update, context):
     fname = update.effective_user.first_name
     try:
         helx = update.effective_message.reply_text(
-            "{} is now Away!".format(fname))
+            "*{}* is now Away!".format(fname), parse_mode=ParseMode.MARKDOWN)
         time.sleep(5)
         try:
             helx.delete()
@@ -62,9 +62,10 @@ def no_longer_afk(update, context):
         if message.new_chat_members:  #dont say msg
             return
         firstname = update.effective_user.first_name
+        first_name = first_name.replace('*', '\*')
         try:
              helx = message.reply_text(
-                "{} is no longer AFK!\nTime you were AFK for: {}".format(firstname, end_afk_time))
+                "*{}* is no longer AFK!\nTime you were AFK for: `{}`".format(firstname, end_afk_time), parse_mode=ParseMode.MARKDOWN)
              time.sleep(5)
              try:
                  helx.delete()
@@ -89,6 +90,7 @@ def reply_afk(update, context):
             if ent.type == MessageEntity.TEXT_MENTION:
                 user_id = ent.user.id
                 fst_name = ent.user.first_name
+                fst_name = fst_name.replace('*', '\*')
 
                 if user_id in chk_users:
                     return
@@ -131,13 +133,13 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if reason == "none":
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is AFK!\nSince: {}".format(fst_name, since_afk)
-            update.effective_message.reply_text(res)
+            res = "*{}* is AFK!\nSince: {}".format(fst_name, since_afk)
+            update.effective_message.reply_text(res, parse_mode=ParseMode.MARKDOWM)
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is AFK! Says it's because of:\n{}\nSince: {}".format(fst_name, reason, since_afk)
-            helx = update.effective_message.reply_text(res)
+            res = "*{}* is AFK!\nSays it's because of:\n`{}`\nSince: `{}`".format(fst_name, reason, since_afk)
+            helx = update.effective_message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
             time.sleep(5)
             try:
                 helx.delete()

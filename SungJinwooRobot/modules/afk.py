@@ -134,7 +134,7 @@ def check_afk(update, context, user_id, fst_name, userc_id):
             if int(userc_id) == int(user_id):
                 return
             res = "*{}* is dead!\nSince: `{}`".format(fst_name, since_afk)
-            update.effective_message.reply_text(res, parse_mode=ParseMode.MARKDOWM)
+            update.effective_message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
         else:
             if int(userc_id) == int(user_id):
                 return

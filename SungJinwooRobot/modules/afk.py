@@ -90,7 +90,7 @@ def reply_afk(update, context):
             if ent.type == MessageEntity.TEXT_MENTION:
                 user_id = ent.user.id
                 fst_name = ent.user.first_name
-                fst_name = fst_name.replace('*', '\*')
+                
 
                 if user_id in chk_users:
                     return

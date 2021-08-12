@@ -37,7 +37,7 @@ def afk(update, context):
     fname = update.effective_user.first_name
     try:
         helx = update.effective_message.reply_text(
-            "*{}* is now Away!".format(fname), parse_mode=ParseMode.MARKDOWN)
+            "*{}* is now dead!".format(fname), parse_mode=ParseMode.MARKDOWN)
         time.sleep(5)
         try:
             helx.delete()
@@ -65,7 +65,7 @@ def no_longer_afk(update, context):
         first_name = first_name.replace('*', '\*')
         try:
              helx = message.reply_text(
-                "*{}* is no longer AFK!\nTime you were AFK for: `{}`".format(firstname, end_afk_time), parse_mode=ParseMode.MARKDOWN)
+                "*{}* is no longer dead!\nAlive after: `{}`".format(firstname, end_afk_time), parse_mode=ParseMode.MARKDOWN)
              time.sleep(5)
              try:
                  helx.delete()
@@ -133,12 +133,12 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if reason == "none":
             if int(userc_id) == int(user_id):
                 return
-            res = "*{}* is AFK!\nSince: {}".format(fst_name, since_afk)
+            res = "*{}* is AFK!\nSince: `{}`".format(fst_name, since_afk)
             update.effective_message.reply_text(res, parse_mode=ParseMode.MARKDOWM)
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "*{}* is AFK!\nSays it's because of:\n`{}`\nSince: `{}`".format(fst_name, reason, since_afk)
+            res = "*{}* is dead!\n*Reason*: `{}`\nSince: `{}`".format(fst_name, reason, since_afk)
             helx = update.effective_message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
             time.sleep(5)
             try:

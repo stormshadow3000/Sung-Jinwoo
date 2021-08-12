@@ -62,7 +62,7 @@ def no_longer_afk(update, context):
         if message.new_chat_members:  #dont say msg
             return
         firstname = update.effective_user.first_name
-        first_name = first_name.replace('*', '\*')
+        
         try:
              helx = message.reply_text(
                 "*{}* is no longer dead!\nAlive after: `{}`".format(firstname, end_afk_time), parse_mode=ParseMode.MARKDOWN)

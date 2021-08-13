@@ -169,7 +169,7 @@ def airing(update, context):
     search_str = message.text.split(' ', 1)
     if len(search_str) == 1:
         update.effective_message.reply_text(
-            '*Usage:* `/airing` <anime name>)',
+            '*Usage:* `/airing <anime name>`',
             parse_mode = ParseMode.MARKDOWN)
         return
     variables = {'search': search_str[1]}

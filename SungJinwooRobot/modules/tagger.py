@@ -46,7 +46,7 @@ def addtag(update, context):
     match_user = mention_html(member.user.id, member.user.first_name)
     if match_user in tagall_list:
         message.reply_text(
-            "{} is already exist in {}'s tag list.".format(mention_html(member.user.id, member.user.first_name),
+            "{} already exist in {}'s tag list.".format(mention_html(member.user.id, member.user.first_name),
                                                            chat.title),
             parse_mode=ParseMode.HTML
         )
@@ -93,7 +93,7 @@ def removetag(update, context):
     match_user = mention_html(member.user.id, member.user.first_name)
     if match_user not in tagall_list:
         message.reply_text(
-            "{} is doesn't exist in {}'s list!".format(mention_html(member.user.id, member.user.first_name),
+            "{} doesn't exist in {}'s list!".format(mention_html(member.user.id, member.user.first_name),
                                                       chat.title),
             parse_mode=ParseMode.HTML
         )
@@ -133,7 +133,7 @@ def tagg_all_button(update, context):
         if query.from_user.id == int(user_id):
             member = chat.get_member(int(user_id))
             query.message.edit_text(
-                "{} is deslined! to add yourself {}'s tag list.".format(mention_html(member.user.id, member.user.first_name),
+                "{} declined! to add yourself {}'s tag list.".format(mention_html(member.user.id, member.user.first_name),
                                                                         chat.title),
                 parse_mode=ParseMode.HTML
             )
@@ -153,7 +153,7 @@ def untagme(update, context):
     match_user = mention_html(user.id, user.first_name)
     if match_user not in tagall_list: 
         message.reply_text(
-            "You're already doesn't exist in {}'s tag list!".format(chat.title)
+            "You don't exist in {}'s tag list!".format(chat.title)
         )
         return
     REDIS.srem(f'tagall2_{chat_id}', mention_html(user.id, user.first_name))
@@ -173,7 +173,7 @@ def tagme(update, context):
     match_user = mention_html(user.id, user.first_name)
     if match_user in tagall_list:
         message.reply_text(
-            "You're Already Exist In {}'s Tag List!".format(chat.title)
+            "You already exist in {}'s tag list!".format(chat.title)
         ) 
         return
     REDIS.sadd(f'tagall2_{chat_id}', mention_html(user.id, user.first_name))

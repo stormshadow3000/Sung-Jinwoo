@@ -3,7 +3,7 @@
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)!]
 
 
-A modular Telegram Group Management bot, can be found on telegram as [Sung Jin-Woo](https://t.me/SungJinwooRobot).
+A modular Telegram Group Management bot, can be found on telegram as [Mikey-kun](https://t.me/mikey_op_bot).
 
 The Support group can be reached out to at [Mikey support](https://t.me/bot_support_op), where you can ask for help about [Mikey-kun](@mikey_op_bot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
 

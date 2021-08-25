@@ -1,11 +1,11 @@
-![Sung Jin-Woo](https://telegra.ph/file/cc951a72b7416a2dedc02.jpg)
-# Sung Jin-Woo 
+![Manjiro Sano](https://telegra.ph/file/7b5840767dcde1e4ea4a8.jpg)
+# Manjiro Sano
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)!]
 
 
 A modular Telegram Group Management bot, can be found on telegram as [Sung Jin-Woo](https://t.me/SungJinwooRobot).
 
-The Support group can be reached out to at [Hunters Associations](https://t.me/HuntersAssociations), where you can ask for help about [Sung Jin-Woo](https://t.me/SungJinwooRobot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
+The Support group can be reached out to at [Mikey support](https://t.me/bot_support_op), where you can ask for help about [Mikey-kun](@mikey_op_bot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
 
 ## How to setup/deploy.
 
@@ -37,7 +37,7 @@ This is because markdown parsing is done by iterating through a dict, which is o
 There are two possible ways of configuring your bot: a config.py file, or ENV variables.
 
 The preferred version is to use a `config.py` file, as it makes it easier to see all your settings grouped together.
-This file should be placed in your `SungJinwooRobot` folder, alongside the `__main__.py` file. 
+This file should be placed in your `Mikey` folder, alongside the `__main__.py` file. 
 This is where your bot token will be loaded from, as well as your database URI (if you're using a database), and most of
 your other settings.
 
@@ -46,7 +46,7 @@ defaults set in the sample_config, hence making it easier to upgrade.
 
 An example `config.py` file could be:
 ```
-from SungJinwooRobot.sample_config import Config
+from MikeyRobot.sample_config import Config
 
 class Development(Config):
     OWNER_ID = 254318997  # your telegram ID

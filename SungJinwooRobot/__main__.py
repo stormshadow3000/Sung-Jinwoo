@@ -72,7 +72,7 @@ buttons = [
         text="🚔 Support", url=f"https://t.me/bot_support_op{SUPPORT_CHAT}"
         ),
         InlineKeyboardButton(
-        text="📚 Solo Leveling", url=f"https://t.me/Solo_Leveling_Webtoon"
+        text="📚 Hawks Network", url=f"https://t.me/HawksNet"
         ),
     ],
     [
@@ -82,7 +82,7 @@ buttons = [
     ]
 ]
 HELP_STRINGS = """
-*Main Commands*[:](https://telegra.ph/file/a5d31aeac47c4c2542983.jpg)
+*Main Commands*[:](https://telegra.ph/file/52c571e44fdb38e150dca.jpg)
 ✏️ /help: PM's you this message.
 ✏️ /start: You have already used it.
 *All commands can either be used with / or !.*  

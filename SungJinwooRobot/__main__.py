@@ -56,7 +56,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hello there, My Name is [Mikey](https://telegra.ph/file/415acd8e0439a57552e31.jpg)
+Hello there, My Name is [Mikey](https://telegra.ph/file/a5d31aeac47c4c2542983.jpg)
 I am a Anime Themed Group managing bot from Tokyo Revengers
 I will help you manage your group.
 ✏️ Click Below help button or send /help to know all my Commands.

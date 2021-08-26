@@ -49,12 +49,14 @@ def send(msg, bot, update):
 
 
 @dev_plus
+@run_async
 def evaluate(update: Update, context: CallbackContext):
     bot = context.bot
     send(do(eval, bot, update), bot, update)
 
 
 @dev_plus
+@run_async
 def execute(update: Update, context: CallbackContext):
     bot = context.bot
     send(do(exec, bot, update), bot, update)
@@ -114,6 +116,7 @@ def do(func, bot, update):
 
 
 @dev_plus
+@run_async
 def clear(update: Update, context: CallbackContext):
     bot = context.bot
     log_input(update)
